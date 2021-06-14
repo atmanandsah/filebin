@@ -20,8 +20,8 @@ function FileBin(){
           .then(Res=>{ if(Res){
             setMessage(Res.data.fileurl)
             setMess(Res.data)
-              console.log(Res.data);
-              console.log(Res.data.fileurl);
+              //console.log(Res.data);
+              //console.log(Res.data.fileurl);
               setChoosed(false)
           }})
           .catch(Err=>{console.log(Err)})
