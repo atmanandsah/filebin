@@ -29,9 +29,10 @@ APP.post('/uploadfile',(req,res)=>{
         })
         newfilebin.save().then(Res=>{
             const ID=Res._id
+            console.log(ID);
             filebin.findByIdAndUpdate(ID,{fileurl:`http://localhost:8000/fetchfile/${ID}${FILENAME}/${ID}`},{returnOriginal:false})
             .then(Res=>{
-                if(FILESIZE<=123){
+                if(FILESIZE<=20971520){
                     FILE.mv(path.join(__dirname,"./uploadedfiles",`${ID}${FILENAME}`),(Err)=>{
                         if(Err){
                             console.log(Err)
